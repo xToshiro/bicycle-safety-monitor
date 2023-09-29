@@ -41,8 +41,5 @@ Contributions to this project are welcome. Feel free to fork the repository, mak
 ## License
 This project is licensed under the [GNU General Public License, version 3.0](LICENSE.md). See the [LICENSE.md](LICENSE.md) file for details.
 
-## Acknowledgments
-Special thanks to [Name] for their contribution to this project.
-
 ## Contact
-For questions or further information, please contact [Your Name] at [Your Email Address].
+For questions or further information, please contact Jairo Ivo at jairoivo.brito@det.ufc.br.
