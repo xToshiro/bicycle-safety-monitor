@@ -2,10 +2,11 @@
 #include <Adafruit_Sensor.h>
 #include <Wire.h>
 #include "Adafruit_VL53L0X.h"
-#include <TinyGPSPlus.h>
+#include <TinyGPS++.h>
 #include <SoftwareSerial.h>
 #include <SD.h>
 #include <SPI.h>
+#include <ESP32Time.h>
 
 // Definição dos pinos dos LEDs
 const int botao = 32;
@@ -37,6 +38,12 @@ unsigned long ultimaAtualizacao = 0;
 
 // Inicialização do objeto GPS
 TinyGPSPlus gps;
+
+
+// ESP32Time rtc;
+ESP32Time rtc(-10800);  // offset in seconds GMT-3
+
+#define GPS_BAUDRATE 9600  // the default baudrate of NEO-6M is 9600
 
 // Inicialização do objeto SoftwareSerial
 SoftwareSerial ss(RXPin, TXPin);
