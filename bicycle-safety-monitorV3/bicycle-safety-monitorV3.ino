@@ -282,6 +282,17 @@ void blink(char ledColor, int blinkCount) {
     }
 }
 
+void readBotao() {
+
+  if(digitalRead(botao) == HIGH){
+        botaoStatus = 1;
+        digitalWrite(ledAmareloPin, HIGH);
+      } else{
+        botaoStatus = 0;
+      }
+
+}
+
 void loop() {
   // Get the current time in milliseconds since the program started
   unsigned long tempoAtual = millis();
@@ -307,7 +318,7 @@ void loop() {
 
     read_dual_sensors();
     mpuData();
-    
+    readBotao();
     // Log the current sample index
     Serial.println(indiceAmostra);
 

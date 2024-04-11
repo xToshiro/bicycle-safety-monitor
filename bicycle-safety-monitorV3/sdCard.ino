@@ -10,7 +10,10 @@ void saveData() {
             + String(accX) + "," + String(accY) + "," + String(accZ) + "," 
             + String(gyroX) + "," + String(gyroY) + "," + String(gyroZ) + "," 
             + String(accAngleX) + "," + String(accAngleY) + "," 
-            + String(angleX) + "," + String(angleY) + "," + String(angleZ) + "\r\n";
+            + String(angleX) + "," + String(angleY) + "," + String(angleZ) + ","
+            + String(dist1) + ","  // Adicionando a variável dist1
+            + String(dist2) + ","  // Adicionando a variável dist2
+            + String(botaoStatus) + "\r\n";  // Adicionando a variável botaoStatus
   Serial.print(F("- data appended: ")); Serial.print(dataMessage);
   appendFile(SD, "/data.csv", dataMessage.c_str());
 }
@@ -23,7 +26,7 @@ void checkSDFile() {
     Serial.println("File doesn't exist");
     Serial.println("Creating file...");
     delay(1000);
-    writeFile(SD, "/data.csv", "RTCData, RTCHora, GPSData, GPSHora, Lat, Long, Altgps, Vel, GPSUpdate, IndiceAmostra, Temperatura, AccX, AccY, AccZ, GyroX, GyroY, GyroZ, AccAngleX, AccAngleY, AngleX, AngleY, AngleZ \r\n");
+    writeFile(SD, "/data.csv", "RTCData, RTCHora, GPSData, GPSHora, Lat, Long, Altgps, Vel, GPSUpdate, IndiceAmostra, Temperatura, AccX, AccY, AccZ, GyroX, GyroY, GyroZ, AccAngleX, AccAngleY, AngleX, AngleY, AngleZ, Dist1, Dist2, BotaoStatus \r\n");
 
   } else {
     Serial.println("File already exists");
