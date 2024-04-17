@@ -39,6 +39,7 @@ void checkSDFile() {
 //Verifies that it is present and working
 void initSDCard() {
   if (!SD.begin()) {
+    blink('R', 2);
   } else {
     return;
   }
@@ -74,6 +75,7 @@ void writeFile(fs::FS &fs, const char *path, const char *message) {
   if (file.print(message)) {
     //Serial.println("File written");
   } else {
+    blink('R', 2);
     //Serial.println("Write failed");
   }
   file.close();
